@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'VNFDaxRegular';
+    src: url('vnf-dax.eot');
+    src: url('vnf-dax.eot') format('embedded-opentype'),
+         url('vnf-dax.woff') format('woff'),
+         url('vnf-dax.ttf') format('truetype'),
+         url('vnf-dax.svg#VNFDaxRegular') format('svg');
+}

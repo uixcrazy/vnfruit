@@ -1,0 +1,152 @@
+/* 
+    Created on : May 25, 2014, 10:26:39 PM
+    Author     : LVTD
+*/
+
+
+
+.sale {
+    @extend %padding-top-section;
+    /*@extend %img;*/
+    @extend %row2percent;
+
+    .products{
+        @extend %col-70;
+        .ul-wrap{
+            clear:both;
+            ul{
+                li{
+                    @extend %col-t-33;
+                    .item{
+                        border: 1px solid #ddd;
+                        text-align:center;
+                        margin-right: -1px;
+                        margin-bottom: -1px;
+                        .img{
+                            position:relative;
+                            padding:2%;   
+                            @media (min-width: 769px){
+                                padding: 5%;
+                            }
+                            img{
+                                @extend %img;
+                                position:relative;
+                            }
+                        }
+                        .caption{
+                            display:none;
+                        }
+                        .content{
+                            padding:0 2% 2% 2%; 
+                            @media (min-width: 769px){
+                                padding:0 5% 5% 5%;
+                            }
+                            .name{
+                                font-size: 1.25em;
+                                font-family: $font-style2,sans-serif;
+                                color: $green-standard;
+                            }
+                            .price{
+                                font-size: 0.875em;
+                                font-weight:bold;
+                                color:$red-standard;
+                            }
+                            .place{
+                                font-size:0.75em;
+                                color:#5a5a5a;
+                                font-style: italic;
+                            }
+                            p{margin:5px 0;}
+                            span{
+                                margin:0 5px;
+                            }
+                        }
+                    }
+                }
+            }
+            .readmore{
+                @extend %readmore;
+                @extend %clearfix;
+                padding: 11px 0 11px 5px;
+                display: block;
+                font-size: 14px;
+            }
+        }
+    }
+    .use{
+        @extend %col-30;
+        overflow: hidden;
+        @media (max-width:768px){
+            margin-top: 20px;
+        }
+        .title{
+            font-family: $font-style1-regular, sans-serif;
+            color: #fff;
+            background: #7BB328;
+            font-size: 1.25em;
+            padding: 10px;
+            @media (min-width:769px) {
+                margin-left: 2%;
+            }
+            &:before{
+                @extend %fontello-before;
+                content:'\e80a';
+                margin: 0 10px 0 5px;
+            }
+        }
+        .main-news{
+            padding:5%;
+            position:relative;
+            img{
+                @extend %img;
+            }
+            .caption{
+                position:absolute;
+                width: 86%;
+                left:7%;
+                bottom:5%;
+                background: rgba(0,0,0,0.5);
+                a{
+                    display: block;
+                    padding:10px 5px;
+                    color:#fff;
+                    font-size:1.125em;
+                    font-family: $font-style2,sans-serif;
+                    line-height: 1.5;
+                }
+            }
+            @media (max-width:768px) {
+                float:left;
+                width: percentage(0.45);
+                padding:3% 0;
+                .caption{
+                    width: 96%;
+                    left: 2%;
+                    bottom:7%;
+                    background: rgba(0, 0, 0, 0.5);
+                }
+            }
+        }
+        .listmore{
+            padding: 0 5%;
+            ul li{
+                padding:10px 0;
+                border-bottom: 1px solid #D5E5D1;
+                a{
+                    font-family: $font-style2,sans-serif;
+                    color:$green-standard;
+                    text-align: justify;
+                    &:hover{
+                        color:$green-standard-hover;
+                    }
+                }
+            }
+            @media (max-width:768px) {
+                float:left;
+                width: percentage(0.5);
+                position: relative;
+                padding: 3% 0 5% 3%;
+            }
+        }
+    } 
+}

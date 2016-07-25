@@ -1,0 +1,94 @@
+/* 
+    Created on : May 14, 2014, 8:28:42 AM
+    Author     : dailvt
+*/
+.hotnews{
+    @extend %padding-top-section;
+    @extend %row2percent;
+    .news{
+        @extend %col-50;
+        @media only screen and (min-width: 769px){
+            margin-bottom:20px;
+        }
+        .news_top{
+            margin-top: 15px;
+            .images{
+                width: 50%;
+                display: inline-block;
+                border: 1px solid #ccc;
+                img{
+                    margin: 2%;
+                    width: 96%;
+                    display:block;
+                }
+            }
+            .content{
+                width:47%;
+                float:right;
+                color: #555;
+                font-size: initial;
+                overflow: hidden;
+                position:relative;
+                .readmore{
+                    @extend %readmore;
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    width: 100%;
+                    background: #fff;
+                    line-height: 2;
+                }
+                .title{
+                    font-size: 1.25em;
+                    font-family: $font-style2,sans-serif;
+                    color: $green-standard;
+                    margin: 5px 0;
+                    &:hover{
+                        color:$red-standard;
+                    }
+                }
+                p{font-size:0.875em;line-height: 1.2;text-align: justify;}
+            }
+        }
+        .listnews{
+            ul{
+                margin-top:10px;
+                li{
+                    padding:2px 0;
+                    border-bottom: 1px solid #D5E5D1;
+                    a{
+                        display: block;
+                        font-size: 1.125em;
+                        font-family: $font-style2,sans-serif;
+                        color: $green-standard;
+                        padding:8px 0;
+                        @extend %text-transition;
+                        &:hover{
+                            color:$red-standard;
+                            padding-left:8px;
+                            padding-left:0 \9\0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .video{
+        @extend %col-50;
+        text-align: center;
+        /*margin:auto;*/
+        .read-other-video{
+            @extend %readmore;
+            text-align: right;
+            display: block;
+            margin-bottom:5px;
+            letter-spacing: .2em;
+        }
+        .title{
+            font-family: $font-style2, sans-serif;
+            font-size: 1.250em;
+            color:#A9DB5D;
+            margin-top:15px;
+        }
+    }
+}

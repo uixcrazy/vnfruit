@@ -1,0 +1,21 @@
+//@charset "UTF-8";
+/* 
+    Created on : Apr 6, 2014, 4:27:41 PM
+    Author     : LVTD
+    hack: IE8 \0/;    IE9 \9\0;
+*/
+/*genaral*/
+@import "component/variables.scss"; 
+@import "component/mixins.scss";
+@import "component/placeholders.scss";
+@import "component/fontello.scss";
+// Core variables and mixins
+@import "component/base.scss";
+@import "component/nav-horizontal.scss";
+@import "component/camera.scss"; 
+@import "component/hotnews.scss";
+@import "component/agency.scss";
+@import "component/sliderAccordine.scss";
+@import "component/videojs.scss";
+@import "component/sale.scss";
+@import "component/fix-comp.scss";

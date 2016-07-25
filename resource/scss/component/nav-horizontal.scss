@@ -1,0 +1,192 @@
+.main_nav{
+    position:relative;
+    font-family: $font-style1-bold, sans-serif;
+    font-size: initial;
+    border-top: $border-line;
+    border-bottom: $border-line;
+
+    -webkit-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+    a{
+        display: block;
+    }
+    #nav_toggle, .nav_toggle { display: none;}
+    // For screen bigger than 800px 
+    @media (min-width: 769px) {
+        // margin: 0 -1%;
+        > ul > .has_child{
+            > ul{
+                //ko co tac dung gi het
+                border-top:2px solid rgba(255,255,255,0);
+                border-color: #fff;
+            }
+        }
+        ul{
+            //margin: 0 1%;
+            background: #fff;
+            letter-spacing: -0.31em;
+            text-align: left;
+            li{
+                display: inline-block;
+                letter-spacing:normal;
+                position:relative;
+                padding: 10px 4%;
+                border-right: 1px solid $green-standard;
+                a{
+                    font-size: 1em;
+                    color: $green-standard;
+                    text-transform: uppercase;
+                }
+                &:hover,&:focus,&.active {
+                    background: $green-standard;
+                    > a{color:#fff;}
+                }
+                &.has_child{
+                    ul{
+                        position: absolute;
+                        left:0;top:100%;width:100%;
+                        z-index: 1000;
+                        display: none; 
+                        font-size: initial;
+                        background: $green-standard;
+                        li{
+                            font-size:0.875em;
+                            width:92%;
+                            padding: 7px 4%;
+                            > a{color:#fff;}
+                            &.has_child ul{
+                                position: absolute;
+                                top:1px; left:101%;
+                                width:99%;
+                            }
+                            &:hover,&:focus,&.active {
+                                background: #fff;
+                                > a{color:$green-standard;}
+                            }
+                        }
+                    }
+                    &:hover > ul{display: block;}
+                }
+            }
+        }
+    }
+    @media (min-width: 768px) and (max-width: 960px) {
+        ul{
+            li{
+                padding: 10px 2.5%;
+            }
+        }
+    }
+    @media only screen and (max-width: 768px){
+        &{
+            border:none;
+            top: -40px;
+            //menu
+            ul {
+                display: none;
+                li{
+                    background: $green-standard;
+                    border-top: 1px solid $green-standard;
+                    border-bottom: 1px solid $green-standard;
+                    > a{color:#fff;}
+                    &:hover,&:focus{
+                        border-top: 1px solid #fff;
+                        border-bottom: 1px solid #fff;
+                        > a{
+                            color:$green-standard-hover;
+                        }
+                    }
+                    &.active {
+                        background:#fff; 
+                        > a{color:$green-standard;}
+                        border:1px solid $green-standard;
+                    }
+                    a{
+                        display: block;
+                        padding: 8px 4%;
+                        text-align:left;
+                    }
+                    &.has_child ul{
+                        position: relative;
+                        width:99%;
+                        z-index: 1000;
+                        display: none; 
+                        border-left: solid #fff;
+                        border-top: 1px solid #fff;
+                        border-bottom: 1px solid #fff;
+                        li{
+                            width:100%;
+                            &.has_child ul{
+                                position:relative;
+                                margin-left:1%;
+                                width: 98%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        //thêm class nav_toggle
+        .nav_toggle{ 
+            display: block;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            user-select: none; 
+            text-align:right;
+            // #nav_toggle:checked ~ .nav { 
+            //     display: block;
+            //  }
+            .nav_toggle_label{
+                display: inline-block; 
+                position: relative;
+                z-index: 2; cursor: pointer; 
+                font-size: 1.725em;
+                color: $green-standard;
+                text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3);
+                &.icon-th-list:before{
+                    float:right;
+                    line-height: 1.2em;
+                    line-height: 0.8em \9\0;
+                }
+                &:after {
+                    content: 'Danh Mục';
+                    display: inline-block;
+                    -webkit-border-radius: 2px;
+                    border-radius: 2px;
+                    text-align: center;
+                    margin-right: 5px;
+                    @include box-sizing(border-box);
+                }
+                &:hover, &.active{
+                    opacity: 0.7;
+                }
+            }
+            #nav_toggle:checked + .nav_toggle_label:after{
+                content: 'Đóng';
+            }
+        }
+    }
+    @media only screen and (max-width: 479px){
+        &{
+            top:0;
+        }
+        .nav_toggle{
+            .nav_toggle_label{ 
+                width: 100%; 
+            }
+        }
+    }
+}
+/*hack IE 10*/
+@media only screen and (max-width: 768px){
+    .ie10 .main_nav .nav_toggle .nav_toggle_label.icon-th-list:before {
+        line-height: 0.8em;
+    }
+}
+
+//  /* will be red only in google chrome */
+//  @media screen and (-webkit-min-device-pixel-ratio:0){
+
+//  }

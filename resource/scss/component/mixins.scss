@@ -1,0 +1,76 @@
+// Utilities
+// -------------------------
+
+// Clearfix
+// Source: http://nicolasgallagher.com/micro-clearfix-hack/
+@mixin clearfix() {
+    &:before,
+        &:after {
+        content: " "; // 1
+        display: table; // 2
+    }
+    &:after {
+        clear: both;
+    }
+}
+// Box sizing
+@mixin box-sizing($boxmodel) {
+    -webkit-box-sizing: $boxmodel;
+    -moz-box-sizing: $boxmodel;
+    box-sizing: $boxmodel;
+}
+// User select
+// For selecting text on the page
+@mixin user-select($select) {
+    -webkit-user-select: $select;
+    -moz-user-select: $select;
+    -ms-user-select: $select; // IE10+
+    user-select: $select;
+}
+@mixin text-overflow() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+@mixin box-shadow($shadow...) {
+    -webkit-box-shadow: $shadow; // iOS <4.3 & Android <4.1
+    box-shadow: $shadow;
+}
+// Opacity
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    // IE8 filter
+    $opacity-ie: ($opacity * 100);
+    filter: #{alpha(opacity=$opacity-ie)};
+}
+/*grid system*/
+@mixin col($width,$media-width){
+    @media (min-width:$media-width+px) {
+        float:left;
+        width: percentage($width);
+        position: relative;
+    }
+}
+
+@mixin gradient-right-to-transparent($color){
+    background: $color; 
+    //background: rgba(255,255,255,0);
+    background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, $color 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,255,255,0)), color-stop(100%, $color));
+    background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, $color 100%);
+    background: -o-linear-gradient(left, rgba(255,255,255,0) 0%, $color 100%);
+    background: -ms-linear-gradient(left, rgba(255,255,255,0) 0%, $color 100%);
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, $color 100%);
+    //filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr=$color, GradientType=1 );
+}
+@mixin  gradient-left-to-transparent($color){
+    background:  $color; 
+    //background: rgba(231,56,39,1);
+    background: -moz-linear-gradient(left, $color 0%, rgba(255,255,255,0) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, $color), color-stop(100%, rgba(255,255,255,0)));
+    background: -webkit-linear-gradient(left, $color 0%, rgba(255,255,255,0) 100%);
+    background: -o-linear-gradient(left, $color 0%, rgba(255,255,255,0) 100%);
+    background: -ms-linear-gradient(left, $color 0%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(to right, $color 0%, rgba(255,255,255,0) 100%);
+    //filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$color, endColorstr='#ffffff', GradientType=1 );
+}

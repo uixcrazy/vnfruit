@@ -1,0 +1,136 @@
+/* HTML5 display-role reset for older browsers */
+/*article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
+body {line-height: 1;}
+ol, ul {list-style: none;}*/
+.bottomslider{letter-spacing:-0.31em;}
+.bottomslider div{display:inline-block;letter-spacing:normal;}
+.left-ct{width: 64%;
+         /*float:left;*/
+         /*height:500px;*/
+}
+.right-ct{width: 36%;
+          float:right;
+          background:#000;height: 200px;}
+@media only screen and (max-width: 479px){
+    .left-ct,.right-ct{width: 100%;display:block;float:none;}
+}
+
+/*!
+ *  Kwicks: Sexy Sliding Panels for jQuery - v2.2.1
+ *  http://devsmash.com/projects/kwicks
+ * đã duoc chinh sua
+*/
+.accordion-slider{position:relative;width: 100%;}
+/*.accordion-slider large*/
+.kwicks{
+    display: block;
+    list-style-type: none;
+    list-style: none;
+    position: relative;
+    height: 100%;   
+}
+.kwicks > * {
+    display: block;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+/*dailvt*/
+.kwicks > *:after{
+    position:absolute;top:0; z-index: 100;
+    content: " ";width:100%;height: 100%;
+    -webkit-box-shadow: inset 5px 0px 45px -10px rgba(85,85,85,1);
+    -moz-box-shadow: inset 5px 0px 45px -10px rgba(85,85,85,1);
+    box-shadow: inset 5px 0px 45px -10px rgba(85,85,85,1);
+}
+/*---*/
+.kwicks.kwicks-processed > * {margin: 0;position: absolute;height:100%;}
+.kwicks-horizontal > * {float: left;}
+.kwicks-horizontal > :first-child {margin-left: 0;}
+.kwicks-vertical > :first-child {margin-top: 0;}
+
+.accordion-slider .slider-caption{
+    /*    width:960px;
+      
+    padding: 2%;*/
+    /*height: 100px;*/
+
+    overflow: hidden;
+    margin: 0;
+    position: absolute;
+    left: 0; bottom: 0; 
+    background: rgba(0,0,0,.3);
+    /*tam*/
+    color: #fff; 
+    text-shadow: 0 -1px 0 rgba(0,0,0,.3); 
+    font-size: 14px; line-height: 1;
+}
+/*.accordion-slider .kwicks-collapsed .slider-caption{min-width:450px;}*/
+.accordion-slider .slider-caption h3{color:#ee0000;font-size:32px;}
+.accordion-slider .slider-caption h3,.accordion-slider .slider-caption p{margin:5%;}
+/*.accordion-slider small*/
+/*dành cho slider nhỏ*/
+.accordion-slider .fade-slider{position:relative;width: 90%;margin: 0 auto;height:100%;}
+.accordion-slider .fade-slider li{
+    position:absolute;top:0;left:0;
+    opacity:0;
+    filter: alpha(opacity=0);
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    transition: opacity 1s;
+    overflow:hidden;
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow:    0px 2px 5px 0px rgba(50, 50, 50, 0.5);
+    box-shadow:         0px 2px 5px 0px rgba(50, 50, 50, 0.5);
+}
+.accordion-slider .fade-slider li img{width:100%;height:100%;margin-bottom: -3px;/* I don't understand */}
+.accordion-slider .fade-slider li.show{opacity:1;filter: alpha(opacity=100);}
+.accordion-slider .fade-slider li .slider-caption{
+    /*position: relative;*/
+    /*display:none;*/
+    bottom: -150%;
+    -webkit-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+}
+.accordion-slider .fade-slider li:hover .slider-caption{
+    /*display:block;*/
+    bottom:0;
+}
+.accordion-slider .nav-controls{
+    position:relative;
+    z-index:1000;
+    text-align:center;
+    width:100%;
+    bottom: 0;
+    padding-top: 10px;
+}
+.accordion-slider .nav-controls ul > li{display:block;position:static;display:inline-block;cursor:pointer;}
+.accordion-slider .nav-controls ul > li > span{
+    background: #bca698;
+    border: 2px solid #bca698;
+    text-indent: -9999px;
+    display: block; width: 10px;height: 10px;margin: 0 10px;
+    outline: 0;-moz-border-radius:8px;
+    -webkit-border-radius: 8px;
+    border-radius:8px;}
+.accordion-slider .nav-controls ul > li > span.active{ background:#FAFFE4;}
+
+.accordion-slider .nav-direction{
+    position:absolute;
+    z-index:1000;
+    top:40%;
+    width: 90%;
+    margin-left: 5%;
+}
+.accordion-slider .nav-direction .nav-prev, .accordion-slider .nav-direction .nav-next{
+    position:absolute;
+    width: 35px;
+    height:35px;
+    background: #05f;
+    cursor: pointer;
+}
+.accordion-slider .nav-direction .nav-next{right: 0}
+.accordion-slider .nav-direction .nav-prev{left: 0}
+

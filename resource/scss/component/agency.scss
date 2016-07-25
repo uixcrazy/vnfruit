@@ -1,0 +1,142 @@
+/* 
+    Created on : May 14, 2014, 5:37:22 PM
+    Author     : dailvt
+*/
+.agency{
+    background: $green-standard url(../images/bg_abstract.svg) center center no-repeat;
+    background-size: cover;
+    @extend %clearfix;
+    @extend %padding-top-section;
+    @media (max-width:768px){
+        margin-top: -40px;
+    }
+    > h1, > p{
+        @extend %row2percent;
+    }
+    .title{ 
+        font-size:1.375em;
+        letter-spacing:0.1em;
+        color:#d5e7cf;
+        color: rgba(255,255,255,.8);
+        font-family: $font-style1-regular, sans-serif;
+        text-transform: uppercase;
+    }
+    .hsa_agency{
+        /*margin-top: 20px;*/
+        /*height: 250px;*/
+    }
+    .hsa-wrap{
+        overflow:hidden;
+        width:96%;
+        position: relative;
+        margin: 15px auto 0;
+        ul.hsa-list{
+            list-style: none;
+            overflow: hidden; 
+            position: relative;
+            li.hsa-item{
+                width:200px;
+                float:left;
+                margin-right:10px;
+                .images{
+                    border: 1px solid #98b68d;
+                    height: 135px;
+                    overflow: hidden;
+                    position: relative;
+                    img{width: 100%;}
+                    &:after{
+                        content: " ";
+                        position: absolute;top:0;left:0;
+                        border: 5px solid #a9c2a0;
+                        border-color: rgba(209, 209, 193, 0.8);
+                        width:188px;height: 125px;
+                    }
+                }
+                .content{
+                    margin-top:7px;
+                    > p{
+                        color:#d5e7cf;
+                        color: rgba(255,255,255,.8);
+                        padding:5px 0;
+                        font-size: 0.875em;
+                    }
+                    .title-item{
+                        @extend %text-transition;
+                        font-size:1.125em;
+                        color:#FCF49F;
+                        font-family: $font-style2, sans-serif;
+                        padding: 5px 0;
+                        display: block;
+                        &:hover{
+                            color:#fff;
+                            padding-left: 8px;
+                            letter-spacing: 0.02em;
+                            padding-left:0 \9\0;
+                            letter-spacing: normal \9\0;/*Only works in IE9*/
+                        }
+                    }
+                    .address:before, .phone-number:before{
+                        @extend %fontello-before;
+                        margin-right:7px;
+                    }
+                    .address:before {
+                        content:'\e83b';
+                    } 
+                    .phone-number:before {
+                        content: '\e875';
+                    }                
+                }
+            }
+        }
+        &:hover, &:focus{
+            .hsa-nav .nav-prev{
+                left:0;   
+            }
+            .hsa-nav .nav-next{
+                right: 0;   
+            }
+        }
+        .hsa-nav{
+            .nav-prev,.nav-next{
+                @extend %user-select;
+                @extend %five_s-transition;
+                position:absolute;
+                top:0;
+                z-index: 100;
+                display: block;
+                cursor: pointer;
+                width:35px;
+                height: 100%;
+                font-size: 2em;
+                text-indent: -99999px;
+                &:before{
+                    @extend %fontello-before;
+                    position: absolute;
+                    top:42%;
+                    text-indent: 0;
+                    display:block;
+                    width: 100%;text-align: center;
+                    background: rgba(255,255,255,.8);
+                    color: $green-standard;
+                    padding: 5px 0;
+                }
+            }
+            .nav-prev{
+                @include gradient-left-to-transparent(#8dc17e);
+                //background: rgba(255, 255, 255, 0.2);
+                left:-100px;
+                &:before{
+                    content: '\e80f';
+                }
+            }
+            .nav-next{
+                @include gradient-right-to-transparent(#8dc17e);
+                right:-100px;
+                &:before{
+                    content: '\e810';
+                }
+            }
+        }
+    }
+}
+

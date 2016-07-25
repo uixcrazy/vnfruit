@@ -1,0 +1,110 @@
+/* 
+    Created on : May 14, 2014, 10:27:42 AM
+    Author     : dailvt
+    Placeholder: là những class tạm, sẽ ko được biên dịch, chỉ để @extend
+    
+    Dù đã cố gắng, nhưng ko thể thay thế float bằng inline-block;
+*/
+%img{display:block; width: 100%; height: auto;}
+%clearfix{clear: both;}
+%floatleft{float:left;}
+%floatright{float:right;}
+%row2percent{
+    // tương đương .container-fluid trong bootstrap
+    margin: 0 2%;
+    width: 96%;
+    position: relative;
+}
+%padding-top-section{
+    padding: 25px 0;
+}
+%parent-inlineblock{
+    letter-spacing: -0.31em;
+}
+/*layout*/
+%col-50{
+   @include col(0.5,769);
+}
+%col-70{
+   @include col(0.7,769);
+}
+%col-30{
+   @include col(0.3,769);
+}
+%col-t-33{
+   @include col(0.3333333333,480);
+   @media (max-width:480px) {
+        float:left;
+        width: percentage(0.5);
+        position: relative;
+   }
+}
+/*.col-t-33{width: 33.33333333%;}
+@media (min-width: 768px) {
+    .col-70,.col-60,.col-50,.col-40,.col-30,.col-t-33{float:left;}
+    .col-70{width:70%;}
+    .col-60{width: 60%;}
+    .col-50{width: 50%;}
+    .col-40{width: 40%;}
+    .col-30{width:30%;}
+}*/
+/*---*/
+%text-transition{
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+%five_s-transition{
+    -webkit-transition: all 0.58s linear;
+    -moz-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+}
+%user-select{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    /*Introduced in IE 10.
+        See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+    */
+    -ms-user-select: none;
+    user-select: none;
+
+    -khtml-user-select: none;
+}
+%fontello-before{
+    font-family: "fontello";
+    font-style: normal;
+    font-weight: normal;
+}
+
+%readmore{
+    box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    color: #999;
+    font-size: 0.75em;
+    &:hover{color:$red-standard;}
+}
+
+%flexbox-center-center{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
